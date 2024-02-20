@@ -55,10 +55,13 @@ For the second part, I assume there might be a wage difference in workers from d
 
 Clearly there is a difference between workers'wage from different locations. On average, workers in Richmond earns 20000 dollars more that workers in Queens each year.
 
-More conditional-statistics are shown in [Modified_data](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/Modified_data.xlsx)
+_Tips_: More conditional-statistics are shown in [Modified_data](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/Modified_data.xlsx)
 
 To have a better vision, a chart is also included in my analysis:
+![base salary chart.](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/chart1.png)
+![total salary chart.](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/chart2.png)
 
+From the dotplot we can see, there is no clear distribution in workers' wages, no matter based on base salary or total salary. Wages are literally everywhere. Why can the wage difference in this industry so big? These two charts indicate that there needs to be further analysis on the sample. Workers might receive different wages because they have different positions
 
 ## Extra-credit
 
