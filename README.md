@@ -1,6 +1,6 @@
 # Analysis on citywide payroll in NewYork
 
-## Data set details:
+## **_Data set details_**:
 
 - As a Junior student, I'm interested in how the City’s budget is being spent on salary and overtime pay for all municipal employees. This is the primary reason why I pick this dataset:**Citywide Payroll Data (Fiscal Year)**,from NYC OpenData [link to dataset](https://data.cityofnewyork.us/resource/k397-673e.json?). Due to my own capacity, I only chose the first 5000 rows as a sample.
 - To make it clear , the original data was in Json file, and later turned into a csv file. The website only provides me API of the dataset, so I have to do a few steps to turn it into a Json file, using code below:
@@ -8,7 +8,7 @@
 >- response = requests.get(url)
 >- data = json.loads(response.content)
 
-## Some examplary rows are displayed below:
+### **_Some examplary rows are displayed below_**:
 **only a few part of the date are displayed here because the dataset is a little too complicated**
 | fiscal_year | payroll_number | agency_name | last_name | first_name | mid_init | agency_start_date | work_location_borough | title_description | leave_status_as_of_june_30 | base_salary | pay_basis | regular_hours | regular_gross_paid | ot_hours | total_ot_paid | total_other_pay | 
 |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
@@ -29,10 +29,38 @@ Another thing I notice, is that some of the workers are paid annualy, while some
 >- df2.drop(df2[df2['pay_basis'] != 'per Annum'].index, axis=0, inplace=True)
 
 Links to each file are listed below:
-- [original_data_file]()
-- [clean_data]()
-- [Modified_data]()
+- [original_data_file](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/original_data_file.csv)
+- [clean_data](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/clean_data.csv)
+- [Modified_data](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/Modified_data.xlsx)
 
 
+## **_Analysis_**
+As we are analyzing workers' wage in a specific industry, we got understand what the wage is composed of. Each worker has a base salary, a regular paid salary, paid for extra working hours, and other paid. So a specific worker's wage will be _regular paid salary + extra-time paid+ other paid_
+To have a clear vision, I calculated mean, minimum, and maximum for all the variables listed above. It helps us to have basic idea how the distribution works.
+A few statistics are listed below as an example:
+- Average base_salary=72755.70445
+- Average total_other_pay=6093.497739
+- Maximum o2_paid per hour=1118.185455
+- Average total wage=64934.51287
 
+The result proves that wage can be very very different between two workers that have seemingly same abilities in the same industry. Besides, some workers receive higher because they work extra hourse while others don't. The most hardworking employee work near 1118 hours extra in a year.
+
+For the second part, I assume there might be a wage difference in workers from different locations. Using filter tool, we know that this dataset divided NYC into five parts: Bronx, Richmond, Manhattan, Queens, and BK. So I calculated workers'total wage statistics by their working locaton. Some key statistics are listed below:
+- Average total wage=64934.51287
+- Average total wage(BK)=64610.08719
+- Average total wage(Queens)=51281.58444
+- Average total wage(Richmond)=71744.31935
+- Average total wage(Bronx)=61706.2602
+- Average total wage(Manhattan)=69272.92636
+
+Clearly there is a difference between workers'wage from different locations. On average, workers in Richmond earns 20000 dollars more that workers in Queens each year.
+
+More conditional-statistics are shown in [Modified_data](https://github.com/dbdesign-students-spring2024/3-spreadsheet-analysis-NOLIMIT0410/blob/main/data/Modified_data.xlsx)
+
+To have a better vision, a chart is also included in my analysis:
+
+
+## Extra-credit
+
+This assignment deserves extra credit because the original data is a one with 5k rows and 18 colunms. It is so big that this exercise becomes so complicated and time consuming. I believe I derserve this extra credit. O.O
 
